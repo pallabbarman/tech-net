@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import ProductReview from '@/components/ProductReview';
 import { Button } from '@/components/ui/button';
-import { useGetSingleProductsQuery } from '@/redux/api/apiSlice';
+import { useGetSingleProductsQuery } from '@/redux/features/products/productApi';
 import { useParams } from 'react-router-dom';
 
 export default function ProductDetails() {
@@ -25,7 +26,7 @@ export default function ProductDetails() {
                     <Button>Add to cart</Button>
                 </div>
             </div>
-            <ProductReview />
+            <ProductReview id={id!} />
         </>
     );
 }
